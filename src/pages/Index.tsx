@@ -1,8 +1,20 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Apple, Monitor } from "lucide-react";
+import { PricingModal } from "@/components/PricingModal";
+
+type Platform = "mac" | "windows";
 
 const Index = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(null);
+
+  const openPricingModal = (platform: Platform) => {
+    setSelectedPlatform(platform);
+    setModalOpen(true);
+  };
+
   return (
     <div className="font-serif">
       {/* Hero Section - Dark Theme */}
@@ -16,24 +28,20 @@ const Index = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              asChild
               variant="outline"
+              onClick={() => openPricingModal("mac")}
               className="bg-transparent border-kammi-gold text-kammi-gold hover:bg-kammi-gold hover:text-kammi-dark transition-all duration-300 text-lg px-8 py-6"
             >
-              <a href="#">
-                <Apple className="mr-2 h-5 w-5" />
-                Download for Mac
-              </a>
+              <Apple className="mr-2 h-5 w-5" />
+              Download for Mac
             </Button>
             <Button
-              asChild
               variant="outline"
+              onClick={() => openPricingModal("windows")}
               className="bg-transparent border-kammi-gold text-kammi-gold hover:bg-kammi-gold hover:text-kammi-dark transition-all duration-300 text-lg px-8 py-6"
             >
-              <a href="#">
-                <Monitor className="mr-2 h-5 w-5" />
-                Download for Windows
-              </a>
+              <Monitor className="mr-2 h-5 w-5" />
+              Download for Windows
             </Button>
           </div>
         </div>
@@ -46,28 +54,24 @@ const Index = () => {
             Start writing today
           </h2>
           <p className="text-lg opacity-70 mb-10">
-            Free. No sign-up. No cloud. Your words stay on your computer.
+            €10 once. Yours forever. No subscriptions. No cloud. Your words stay on your computer.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              asChild
               variant="outline"
+              onClick={() => openPricingModal("mac")}
               className="bg-transparent border-kammi-text-dark text-kammi-text-dark hover:bg-kammi-text-dark hover:text-kammi-cream transition-all duration-300 text-lg px-8 py-6"
             >
-              <a href="#">
-                <Apple className="mr-2 h-5 w-5" />
-                Download for Mac
-              </a>
+              <Apple className="mr-2 h-5 w-5" />
+              Download for Mac
             </Button>
             <Button
-              asChild
               variant="outline"
+              onClick={() => openPricingModal("windows")}
               className="bg-transparent border-kammi-text-dark text-kammi-text-dark hover:bg-kammi-text-dark hover:text-kammi-cream transition-all duration-300 text-lg px-8 py-6"
             >
-              <a href="#">
-                <Monitor className="mr-2 h-5 w-5" />
-                Download for Windows
-              </a>
+              <Monitor className="mr-2 h-5 w-5" />
+              Download for Windows
             </Button>
           </div>
         </div>
@@ -77,14 +81,14 @@ const Index = () => {
       <footer className="py-12 bg-kammi-dark text-kammi-gold px-6 transition-theme">
         <div className="max-w-2xl mx-auto text-center">
           <div className="flex justify-center gap-8 mb-6 text-lg">
-            <Link 
-              to="/privacy" 
+            <Link
+              to="/privacy"
               className="opacity-70 hover:opacity-100 transition-opacity duration-300"
             >
               Privacy Policy
             </Link>
-            <Link 
-              to="/support" 
+            <Link
+              to="/support"
               className="opacity-70 hover:opacity-100 transition-opacity duration-300"
             >
               Support
@@ -95,6 +99,13 @@ const Index = () => {
           </p>
         </div>
       </footer>
+
+      {/* Pricing Modal */}
+      <PricingModal
+        open={modalOpen}
+        onOpenChange={setModalOpen}
+        platform={selectedPlatform}
+      />
     </div>
   );
 };
