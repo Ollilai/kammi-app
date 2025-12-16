@@ -10,11 +10,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Apple, Monitor, ChevronDown } from "lucide-react";
 
-// Placeholder URLs - replace with actual Stripe Payment Links
-const STRIPE_LINKS = {
-  mac: "https://buy.stripe.com/placeholder-mac",
-  windows: "https://buy.stripe.com/placeholder-windows",
-};
+// Stripe Payment Link (one link with both products)
+const STRIPE_LINK = "https://buy.stripe.com/7sYdR9bla2Dg5eugJc6Zy00";
 
 // Placeholder download URLs for scholarship
 const DOWNLOAD_LINKS = {
@@ -106,7 +103,7 @@ export function PricingModal({ open, onOpenChange, platform }: PricingModalProps
                 ${platform === "mac" ? "ring-2 ring-kammi-gold ring-offset-2 ring-offset-kammi-dark" : ""}
               `}
             >
-              <a href={STRIPE_LINKS.mac}>
+              <a href={STRIPE_LINK}>
                 <Apple className="mr-2 h-5 w-5" />
                 Download for Mac — €10
               </a>
@@ -121,7 +118,7 @@ export function PricingModal({ open, onOpenChange, platform }: PricingModalProps
                 ${platform === "windows" ? "ring-2 ring-kammi-gold ring-offset-2 ring-offset-kammi-dark" : ""}
               `}
             >
-              <a href={STRIPE_LINKS.windows}>
+              <a href={STRIPE_LINK}>
                 <Monitor className="mr-2 h-5 w-5" />
                 Download for Windows — €10
               </a>
