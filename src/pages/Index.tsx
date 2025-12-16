@@ -1,79 +1,53 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Apple, Monitor } from "lucide-react";
 import { PricingModal } from "@/components/PricingModal";
-
-type Platform = "mac" | "windows";
 
 const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(null);
-
-  const openPricingModal = (platform: Platform) => {
-    setSelectedPlatform(platform);
-    setModalOpen(true);
-  };
 
   return (
     <div className="font-serif">
       {/* Hero Section - Dark Theme */}
-      <section className="min-h-screen flex flex-col items-center justify-center bg-kammi-dark text-kammi-gold px-6 transition-theme">
-        <div className="max-w-2xl mx-auto text-center animate-fade-in">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium italic mb-8">
-            A refuge for writers
+      <section className="min-h-screen flex flex-col items-center justify-center bg-kammi-dark text-kammi-gold px-6">
+        <div className="max-w-2xl mx-auto text-center">
+          {/* Title with typewriter */}
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium italic mb-6 overflow-hidden whitespace-nowrap border-r-2 border-kammi-gold typewriter-title inline-block">
+            Kammi
           </h1>
-          <p className="text-xl md:text-2xl opacity-80 mb-12">
+
+          {/* Subtitle with typewriter (delayed) */}
+          <p className="text-2xl md:text-3xl opacity-80 mb-4 overflow-hidden whitespace-nowrap border-r-2 border-kammi-gold typewriter-subtitle block mx-auto" style={{ width: 0 }}>
+            A refuge for writers
+          </p>
+
+          {/* Tagline - fades in after typewriter */}
+          <p className="text-lg md:text-xl opacity-60 mb-12 fade-in-delayed">
             Distraction-free. Personal. Beautiful.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+          {/* Single CTA Button - fades in after typewriter */}
+          <div className="fade-in-delayed">
             <Button
               variant="outline"
-              onClick={() => openPricingModal("mac")}
-              className="bg-transparent border-kammi-gold text-kammi-gold hover:bg-kammi-gold hover:text-kammi-dark transition-all duration-300 text-lg px-8 py-6"
+              onClick={() => setModalOpen(true)}
+              className="bg-transparent border-kammi-gold text-kammi-gold hover:bg-kammi-gold hover:text-kammi-dark transition-all duration-300 text-lg px-10 py-6"
             >
-              <Apple className="mr-2 h-5 w-5" />
-              Download for Mac
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => openPricingModal("windows")}
-              className="bg-transparent border-kammi-gold text-kammi-gold hover:bg-kammi-gold hover:text-kammi-dark transition-all duration-300 text-lg px-8 py-6"
-            >
-              <Monitor className="mr-2 h-5 w-5" />
-              Download for Windows
+              Get Kammi — €10
             </Button>
           </div>
         </div>
       </section>
 
-      {/* CTA Section - Light Theme */}
+      {/* Value Prop Section - Light Theme */}
       <section className="py-24 md:py-32 bg-kammi-cream text-kammi-text-dark px-6 transition-theme">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-medium mb-6">
-            Start writing today
-          </h2>
-          <p className="text-lg opacity-70 mb-10">
-            €10 once. Yours forever. No subscriptions. No cloud. Your words stay on your computer.
+          <p className="text-2xl md:text-3xl font-medium italic mb-8">
+            Your words. Your computer. Your peace.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              variant="outline"
-              onClick={() => openPricingModal("mac")}
-              className="bg-transparent border-kammi-text-dark text-kammi-text-dark hover:bg-kammi-text-dark hover:text-kammi-cream transition-all duration-300 text-lg px-8 py-6"
-            >
-              <Apple className="mr-2 h-5 w-5" />
-              Download for Mac
-            </Button>
-            <Button
-              variant="outline"
-              onClick={() => openPricingModal("windows")}
-              className="bg-transparent border-kammi-text-dark text-kammi-text-dark hover:bg-kammi-text-dark hover:text-kammi-cream transition-all duration-300 text-lg px-8 py-6"
-            >
-              <Monitor className="mr-2 h-5 w-5" />
-              Download for Windows
-            </Button>
-          </div>
+          <p className="text-lg opacity-70">
+            One-time purchase. No subscriptions. No cloud. No distractions.
+          </p>
         </div>
       </section>
 
@@ -95,7 +69,7 @@ const Index = () => {
             </Link>
           </div>
           <p className="opacity-50 text-base">
-            © 2024 Kammi
+            © 2026 Kammi
           </p>
         </div>
       </footer>
@@ -104,7 +78,6 @@ const Index = () => {
       <PricingModal
         open={modalOpen}
         onOpenChange={setModalOpen}
-        platform={selectedPlatform}
       />
     </div>
   );
