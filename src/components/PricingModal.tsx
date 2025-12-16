@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Apple, Monitor, ChevronDown } from "lucide-react";
 
-// Stripe Payment Link (one link with both products)
+// Stripe Payment Link
 const STRIPE_LINK = "https://buy.stripe.com/7sYdR9bla2Dg5eugJc6Zy00";
 
 // Placeholder download URLs for scholarship
@@ -19,15 +19,12 @@ const DOWNLOAD_LINKS = {
   windows: "https://download.kammi.app/windows/placeholder",
 };
 
-type Platform = "mac" | "windows";
-
 interface PricingModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  platform: Platform | null; // Which button was clicked
 }
 
-export function PricingModal({ open, onOpenChange, platform }: PricingModalProps) {
+export function PricingModal({ open, onOpenChange }: PricingModalProps) {
   // Scholarship form state
   const [showScholarship, setShowScholarship] = useState(false);
   const [email, setEmail] = useState("");
@@ -78,49 +75,35 @@ export function PricingModal({ open, onOpenChange, platform }: PricingModalProps
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent className="bg-kammi-dark border-kammi-gold/30 text-kammi-gold font-serif sm:max-w-md">
         <DialogHeader className="text-center sm:text-center">
-          <DialogTitle className="text-2xl font-medium italic">
-            Kammi
+          <DialogTitle className="text-2xl font-medium">
+            Choose your platform
           </DialogTitle>
           <DialogDescription className="text-kammi-gold/70 text-base">
-            A refuge for writers
+            €10 once. Yours forever.
           </DialogDescription>
         </DialogHeader>
 
-        {/* Pricing Section */}
-        <div className="text-center py-4">
-          <p className="text-4xl font-medium mb-2">€10</p>
-          <p className="text-sm text-kammi-gold/60 mb-6">One-time purchase. Yours forever.</p>
-
-          {/* Download Buttons */}
+        {/* Platform Buttons */}
+        <div className="py-4">
           <div className="flex flex-col gap-3">
             <Button
               asChild
               variant="outline"
-              className={`
-                bg-transparent border-kammi-gold text-kammi-gold
-                hover:bg-kammi-gold hover:text-kammi-dark
-                transition-all duration-300 text-base py-5
-                ${platform === "mac" ? "ring-2 ring-kammi-gold ring-offset-2 ring-offset-kammi-dark" : ""}
-              `}
+              className="bg-transparent border-kammi-gold text-kammi-gold hover:bg-kammi-gold hover:text-kammi-dark transition-all duration-300 text-base py-5"
             >
               <a href={STRIPE_LINK}>
                 <Apple className="mr-2 h-5 w-5" />
-                Download for Mac — €10
+                Mac
               </a>
             </Button>
             <Button
               asChild
               variant="outline"
-              className={`
-                bg-transparent border-kammi-gold text-kammi-gold
-                hover:bg-kammi-gold hover:text-kammi-dark
-                transition-all duration-300 text-base py-5
-                ${platform === "windows" ? "ring-2 ring-kammi-gold ring-offset-2 ring-offset-kammi-dark" : ""}
-              `}
+              className="bg-transparent border-kammi-gold text-kammi-gold hover:bg-kammi-gold hover:text-kammi-dark transition-all duration-300 text-base py-5"
             >
               <a href={STRIPE_LINK}>
                 <Monitor className="mr-2 h-5 w-5" />
-                Download for Windows — €10
+                Windows
               </a>
             </Button>
           </div>
