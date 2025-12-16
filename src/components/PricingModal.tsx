@@ -1,0 +1,187 @@
+import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Apple, Monitor, ChevronDown } from "lucide-react";
+
+// Placeholder URLs - replace with actual Stripe Payment Links
+const STRIPE_LINKS = {
+  mac: "https://buy.stripe.com/placeholder-mac",
+  windows: "https://buy.stripe.com/placeholder-windows",
+};
+
+// Placeholder download URLs for scholarship
+const DOWNLOAD_LINKS = {
+  mac: "https://download.kammi.app/mac/placeholder",
+  windows: "https://download.kammi.app/windows/placeholder",
+};
+
+type Platform = "mac" | "windows";
+
+interface PricingModalProps {
+  open: boolean;
+  onOpenChange: (open: boolean) => void;
+  platform: Platform | null; // Which button was clicked
+}
+
+export function PricingModal({ open, onOpenChange, platform }: PricingModalProps) {
+  // Scholarship form state
+  const [showScholarship, setShowScholarship] = useState(false);
+  const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [scholarshipSubmitted, setScholarshipSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  // Reset state when modal closes
+  const handleOpenChange = (newOpen: boolean) => {
+    if (!newOpen) {
+      // Reset after a small delay to avoid visual glitches
+      setTimeout(() => {
+        setShowScholarship(false);
+        setEmail("");
+        setScholarshipSubmitted(false);
+        setError(null);
+      }, 200);
+    }
+    onOpenChange(newOpen);
+  };
+
+  // Handle scholarship form submission
+  const handleScholarshipSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/scholarship", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit request");
+      }
+
+      setScholarshipSubmitted(true);
+    } catch (err) {
+      setError("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  return (
+    <Dialog open={open} onOpenChange={handleOpenChange}>
+      <DialogContent className="bg-kammi-dark border-kammi-gold/30 text-kammi-gold font-serif sm:max-w-md">
+        <DialogHeader className="text-center sm:text-center">
+          <DialogTitle className="text-2xl font-medium italic">
+            Kammi
+          </DialogTitle>
+          <DialogDescription className="text-kammi-gold/70 text-base">
+            A refuge for writers
+          </DialogDescription>
+        </DialogHeader>
+
+        {/* Pricing Section */}
+        <div className="text-center py-4">
+          <p className="text-4xl font-medium mb-2">€10</p>
+          <p className="text-sm text-kammi-gold/60 mb-6">One-time purchase. Yours forever.</p>
+
+          {/* Download Buttons */}
+          <div className="flex flex-col gap-3">
+            <Button
+              asChild
+              variant="outline"
+              className={`
+                bg-transparent border-kammi-gold text-kammi-gold
+                hover:bg-kammi-gold hover:text-kammi-dark
+                transition-all duration-300 text-base py-5
+                ${platform === "mac" ? "ring-2 ring-kammi-gold ring-offset-2 ring-offset-kammi-dark" : ""}
+              `}
+            >
+              <a href={STRIPE_LINKS.mac}>
+                <Apple className="mr-2 h-5 w-5" />
+                Download for Mac — €10
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              className={`
+                bg-transparent border-kammi-gold text-kammi-gold
+                hover:bg-kammi-gold hover:text-kammi-dark
+                transition-all duration-300 text-base py-5
+                ${platform === "windows" ? "ring-2 ring-kammi-gold ring-offset-2 ring-offset-kammi-dark" : ""}
+              `}
+            >
+              <a href={STRIPE_LINKS.windows}>
+                <Monitor className="mr-2 h-5 w-5" />
+                Download for Windows — €10
+              </a>
+            </Button>
+          </div>
+        </div>
+
+        {/* Scholarship Section */}
+        <div className="border-t border-kammi-gold/20 pt-4 mt-2">
+          {!scholarshipSubmitted ? (
+            <>
+              <button
+                onClick={() => setShowScholarship(!showScholarship)}
+                className="w-full text-sm text-kammi-gold/50 hover:text-kammi-gold/80 transition-colors flex items-center justify-center gap-1"
+              >
+                In need of a scholarship?
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    showScholarship ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {/* Scholarship Form */}
+              {showScholarship && (
+                <form onSubmit={handleScholarshipSubmit} className="mt-4 space-y-3">
+                  <p className="text-sm text-kammi-gold/60 text-center">
+                    We believe everyone deserves a quiet place to write. Enter your email and we'll send you the download link.
+                  </p>
+                  <Input
+                    type="email"
+                    placeholder="your@email.com"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="bg-transparent border-kammi-gold/30 text-kammi-gold placeholder:text-kammi-gold/30 focus:border-kammi-gold"
+                  />
+                  {error && (
+                    <p className="text-red-400 text-sm text-center">{error}</p>
+                  )}
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-kammi-gold/20 text-kammi-gold hover:bg-kammi-gold/30 border border-kammi-gold/30"
+                  >
+                    {isSubmitting ? "Sending..." : "Request Scholarship"}
+                  </Button>
+                </form>
+              )}
+            </>
+          ) : (
+            /* Success Message */
+            <div className="text-center py-2">
+              <p className="text-kammi-gold/80">
+                Check your inbox — your download link is on its way.
+              </p>
+            </div>
+          )}
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+}
