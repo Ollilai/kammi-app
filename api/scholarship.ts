@@ -4,10 +4,10 @@ import { Resend } from "resend";
 // Initialize Resend with API key from environment variable
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// Placeholder download links - replace with actual URLs
+// Download URLs for scholarship emails
 const DOWNLOAD_LINKS = {
-  mac: "https://download.kammi.app/mac/placeholder",
-  windows: "https://download.kammi.app/windows/placeholder",
+  mac: "https://github.com/Ollilai/Kammi/releases/download/v1.0.1/Kammi-1.0.0-arm64.dmg",
+  windows: "https://github.com/Ollilai/Kammi/releases/download/v1.0.1/Kammi.Setup.1.0.0.exe",
 };
 
 export default async function handler(

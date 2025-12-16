@@ -13,10 +13,10 @@ import { Apple, Monitor, ChevronDown } from "lucide-react";
 // Stripe Payment Link
 const STRIPE_LINK = "https://buy.stripe.com/7sYdR9bla2Dg5eugJc6Zy00";
 
-// Placeholder download URLs for scholarship
+// Download URLs (for future use)
 const DOWNLOAD_LINKS = {
-  mac: "https://download.kammi.app/mac/placeholder",
-  windows: "https://download.kammi.app/windows/placeholder",
+  mac: "https://github.com/Ollilai/Kammi/releases/download/v1.0.1/Kammi-1.0.0-arm64.dmg",
+  windows: "https://github.com/Ollilai/Kammi/releases/download/v1.0.1/Kammi.Setup.1.0.0.exe",
 };
 
 interface PricingModalProps {
