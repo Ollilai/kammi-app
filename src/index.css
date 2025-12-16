@@ -122,6 +122,10 @@
   50% { border-color: hsl(var(--kammi-gold)); }
 }
 
+@keyframes hide-caret {
+  to { border-color: transparent; }
+}
+
 @keyframes fade-in-up {
   from {
     opacity: 0;
@@ -133,39 +137,28 @@
   }
 }
 
-.typewriter {
+/* Title: types for 1s, cursor blinks during, then hides at 1.2s (before subtitle starts) */
+.typewriter-title {
   overflow: hidden;
   white-space: nowrap;
-  border-right: 2px solid hsl(var(--kammi-gold));
+  border-right: 2px solid transparent;
   width: 0;
   animation:
-    typewriter 2s steps(30, end) forwards,
-    blink-caret 0.75s step-end infinite;
+    typewriter 1s steps(10, end) forwards,
+    blink-caret 0.5s step-end 2,
+    hide-caret 0.1s forwards 1.1s;
 }
 
-.typewriter-title {
-  animation:
-    typewriter 1s steps(15, end) forwards,
-    blink-caret 0.75s step-end infinite;
-}
-
+/* Subtitle: starts at 1.2s, types for 1.8s, cursor blinks, then hides */
 .typewriter-subtitle {
-  animation:
-    typewriter 2.5s steps(40, end) forwards,
-    blink-caret 0.75s step-end infinite;
-  animation-delay: 1.2s;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid transparent;
   width: 0;
-}
-
-/* Remove cursor after typing completes */
-.typewriter-title {
   animation:
-    typewriter 1s steps(15, end) forwards,
-    blink-caret 0.75s step-end 2;
-}
-
-.typewriter-no-cursor {
-  border-right: none;
+    typewriter 1.8s steps(20, end) forwards 1.2s,
+    blink-caret 0.5s step-end 6 1.2s,
+    hide-caret 0.1s forwards 3.2s;
 }
 
 .fade-in-delayed {

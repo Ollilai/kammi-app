@@ -12,12 +12,12 @@ const Index = () => {
       <section className="min-h-screen flex flex-col items-center justify-center bg-kammi-dark text-kammi-gold px-6">
         <div className="max-w-2xl mx-auto text-center">
           {/* Title with typewriter */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium italic mb-6 overflow-hidden whitespace-nowrap border-r-2 border-kammi-gold typewriter-title inline-block">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium italic mb-6 typewriter-title inline-block">
             Kammi
           </h1>
 
           {/* Subtitle with typewriter (delayed) */}
-          <p className="text-2xl md:text-3xl opacity-80 mb-4 overflow-hidden whitespace-nowrap border-r-2 border-kammi-gold typewriter-subtitle block mx-auto" style={{ width: 0 }}>
+          <p className="text-2xl md:text-3xl opacity-80 mb-4 typewriter-subtitle block mx-auto">
             A refuge for writers
           </p>
 
@@ -39,14 +39,22 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Value Prop Section - Light Theme */}
+      {/* About Section - Light Theme */}
       <section className="py-24 md:py-32 bg-kammi-cream text-kammi-text-dark px-6 transition-theme">
         <div className="max-w-2xl mx-auto text-center">
-          <p className="text-2xl md:text-3xl font-medium italic mb-8">
-            Your words. Your computer. Your peace.
+          <h2 className="text-2xl md:text-3xl font-medium italic mb-8">
+            Writing, without the noise
+          </h2>
+          <p className="text-lg opacity-80 mb-6 leading-relaxed">
+            Kammi is a minimalist writing app. No toolbars. No notifications. No clutter.
+            Just you and your words on a quiet page.
           </p>
-          <p className="text-lg opacity-70">
-            One-time purchase. No subscriptions. No cloud. No distractions.
+          <p className="text-lg opacity-80 mb-8 leading-relaxed">
+            Digital writing should feel as intimate as pen and paper.
+            Kammi gives you that space — a place where your thoughts can flow without every button and menu pulling your attention away.
+          </p>
+          <p className="text-base opacity-60 italic">
+            One-time purchase. No subscriptions. No cloud. Your words stay on your computer.
           </p>
         </div>
       </section>
