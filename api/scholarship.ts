@@ -29,7 +29,7 @@ export default async function handler(
   try {
     // Send the scholarship email with download links
     await resend.emails.send({
-      from: "Kammi <hello@kammi.app>", // Update with your verified domain
+      from: "Kammi <onboarding@resend.dev>", // Resend test email - replace with your domain later
       to: email,
       subject: "Your Kammi download link",
       text: `Hello,
