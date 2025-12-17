@@ -6,8 +6,8 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Download URLs for scholarship emails
 const DOWNLOAD_LINKS = {
-  mac: "https://github.com/Ollilai/Kammi/releases/download/v1.0.1/Kammi-1.0.0-arm64.dmg",
-  windows: "https://github.com/Ollilai/Kammi/releases/download/v1.0.1/Kammi.Setup.1.0.0.exe",
+  mac: "https://github.com/Ollilai/Kammi/releases/download/v1.0.2/Kammi-1.0.2-arm64.dmg",
+  windows: "https://github.com/Ollilai/Kammi/releases/download/v1.0.2/Kammi.Setup.1.0.2.exe",
 };
 
 export default async function handler(
@@ -47,7 +47,9 @@ With warmth,
 The Kammi Team
 
 ---
-P.S. If Kammi becomes valuable to you and your circumstances change, we'd be grateful if you considered supporting us at kammi.app`,
+P.S. If Kammi becomes valuable to you and your circumstances change, we'd be grateful if you considered supporting us at kammi.app
+
+Questions or feedback? Reach us at kammi.tuki@gmail.com`,
     });
 
     // Log the scholarship request (you could save this to a database for follow-up)
