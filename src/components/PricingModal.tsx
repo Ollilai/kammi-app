@@ -79,7 +79,7 @@ export function PricingModal({ open, onOpenChange }: PricingModalProps) {
             Choose your platform
           </DialogTitle>
           <DialogDescription className="text-kammi-gold/70 text-base">
-            €10 once. Yours forever.
+            10 € once. Yours forever.
           </DialogDescription>
         </DialogHeader>
 
@@ -119,9 +119,8 @@ export function PricingModal({ open, onOpenChange }: PricingModalProps) {
               >
                 In need of a scholarship?
                 <ChevronDown
-                  className={`h-4 w-4 transition-transform duration-200 ${
-                    showScholarship ? "rotate-180" : ""
-                  }`}
+                  className={`h-4 w-4 transition-transform duration-200 ${showScholarship ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 

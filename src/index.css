@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+/* Using system Georgia font */
 
 @tailwind base;
 @tailwind components;
@@ -7,41 +7,49 @@
 @layer base {
   :root {
     /* Kammi Light Theme */
-    --background: 54 38% 91%; /* #f5f5dc - cream */
-    --foreground: 0 0% 24%; /* #3d3d3d - warm dark */
-    
+    --background: 54 38% 91%;
+    /* #f5f5dc - cream */
+    --foreground: 0 0% 24%;
+    /* #3d3d3d - warm dark */
+
     --card: 54 38% 91%;
     --card-foreground: 0 0% 24%;
-    
+
     --popover: 54 38% 91%;
     --popover-foreground: 0 0% 24%;
-    
-    --primary: 37 23% 69%; /* #c4b69c - warm gold */
+
+    --primary: 37 23% 69%;
+    /* #c4b69c - warm gold */
     --primary-foreground: 0 0% 10%;
-    
-    --secondary: 0 0% 10%; /* #1a1a1a - deep dark */
+
+    --secondary: 0 0% 10%;
+    /* #1a1a1a - deep dark */
     --secondary-foreground: 37 23% 69%;
-    
+
     --muted: 54 20% 85%;
     --muted-foreground: 0 0% 35%;
-    
+
     --accent: 37 23% 69%;
     --accent-foreground: 0 0% 10%;
-    
+
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    
+
     --border: 37 15% 75%;
     --input: 37 15% 75%;
     --ring: 37 23% 69%;
-    
+
     --radius: 0.5rem;
-    
+
     /* Kammi specific */
-    --kammi-dark: 0 0% 10%; /* #1a1a1a */
-    --kammi-cream: 54 38% 91%; /* #f5f5dc */
-    --kammi-gold: 37 23% 69%; /* #c4b69c */
-    --kammi-text-dark: 0 0% 24%; /* #3d3d3d */
+    --kammi-dark: 0 0% 10%;
+    /* #1a1a1a */
+    --kammi-sepia: 37 23% 69%;
+    /* #c4b69c */
+    --kammi-gold: 37 23% 69%;
+    /* #c4b69c */
+    --kammi-text-dark: 0 0% 10%;
+    /* #1a1a1a */
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -54,30 +62,32 @@
   }
 
   .dark {
-    --background: 0 0% 10%; /* #1a1a1a */
-    --foreground: 37 23% 69%; /* #c4b69c */
-    
+    --background: 0 0% 10%;
+    /* #1a1a1a */
+    --foreground: 37 23% 69%;
+    /* #c4b69c */
+
     --card: 0 0% 10%;
     --card-foreground: 37 23% 69%;
-    
+
     --popover: 0 0% 10%;
     --popover-foreground: 37 23% 69%;
-    
+
     --primary: 37 23% 69%;
     --primary-foreground: 0 0% 10%;
-    
+
     --secondary: 0 0% 15%;
     --secondary-foreground: 37 23% 69%;
-    
+
     --muted: 0 0% 18%;
     --muted-foreground: 37 15% 55%;
-    
+
     --accent: 0 0% 15%;
     --accent-foreground: 37 23% 69%;
-    
+
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 98%;
-    
+
     --border: 0 0% 20%;
     --input: 0 0% 20%;
     --ring: 37 23% 69%;
@@ -97,12 +107,17 @@
   * {
     @apply border-border;
   }
-  
+
+  html {
+    background-color: #1a1a1a;
+  }
+
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Cormorant Garamond', Georgia, serif;
+    @apply text-foreground;
+    background-color: #1a1a1a;
+    font-family: Georgia, serif;
     font-size: 20px;
-    line-height: 1.8;
+    line-height: 1.6;
   }
 }
 
@@ -113,17 +128,31 @@
 
 /* Typewriter animation */
 @keyframes typewriter {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: hsl(var(--kammi-gold)); }
+
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: hsl(var(--kammi-gold));
+  }
 }
 
 @keyframes hide-caret {
-  to { border-color: transparent; }
+  to {
+    border-color: transparent;
+  }
 }
 
 @keyframes fade-in-up {
@@ -131,38 +160,55 @@
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Title: types for 1s, cursor blinks during, then hides at 1.2s (before subtitle starts) */
+/* Title: "Kammi" - typewriter reveal for italic text */
 .typewriter-title {
-  overflow: hidden;
+  display: inline-block;
   white-space: nowrap;
   border-right: 2px solid transparent;
-  width: 0;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   animation:
-    typewriter 1s steps(10, end) forwards,
-    blink-caret 0.5s step-end 2,
-    hide-caret 0.1s forwards 1.1s;
+    reveal-text-italic 1.5s steps(15, end) forwards,
+    blink-caret 0.5s step-end 3,
+    hide-caret 0.1s forwards 1.6s;
 }
 
-/* Subtitle: starts at 1.2s, types for 1.8s, cursor blinks, then hides */
+/* Subtitle: "A refuge for writers" - typewriter reveal, starts at 1.8s */
 .typewriter-subtitle {
-  overflow: hidden;
   white-space: nowrap;
   border-right: 2px solid transparent;
-  width: 0;
+  clip-path: inset(0 100% 0 0);
   animation:
-    typewriter 1.8s steps(20, end) forwards 1.2s,
-    blink-caret 0.5s step-end 6 1.2s,
-    hide-caret 0.1s forwards 3.2s;
+    reveal-text 2s steps(30, end) forwards 1.8s,
+    blink-caret 0.5s step-end 5 1.8s,
+    hide-caret 0.1s forwards 4s;
+}
+
+@keyframes reveal-text {
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Angled reveal for italic text - matches ~12deg italic slant */
+@keyframes reveal-text-italic {
+  from {
+    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+  }
+
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
 }
 
 .fade-in-delayed {
   opacity: 0;
   animation: fade-in-up 0.8s ease forwards;
-  animation-delay: 3.5s;
+  animation-delay: 4.3s;
 }

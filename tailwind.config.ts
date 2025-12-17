@@ -64,13 +64,13 @@ export default {
         },
         kammi: {
           dark: "hsl(var(--kammi-dark))",
-          cream: "hsl(var(--kammi-cream))",
+          sepia: "hsl(var(--kammi-sepia))",
           gold: "hsl(var(--kammi-gold))",
           "text-dark": "hsl(var(--kammi-text-dark))",
         },
       },
       fontFamily: {
-        serif: ['Cormorant Garamond', 'Georgia', 'serif'],
+        serif: ['Georgia', 'serif'],
       },
       borderRadius: {
         lg: "var(--radius)",

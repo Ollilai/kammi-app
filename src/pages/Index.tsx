@@ -9,17 +9,19 @@ const Index = () => {
   return (
     <div className="font-serif">
       {/* Hero Section - Dark Theme */}
-      <section className="min-h-screen flex flex-col items-center justify-center bg-kammi-dark text-kammi-gold px-6">
+      <section className="min-h-screen flex flex-col items-center justify-center text-kammi-gold px-6" style={{ backgroundColor: '#1a1a1a' }}>
         <div className="max-w-2xl mx-auto text-center">
           {/* Title with typewriter */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium italic mb-6 typewriter-title inline-block">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium mb-6 typewriter-title inline-block">
             Kammi
           </h1>
 
-          {/* Subtitle with typewriter (delayed) */}
-          <p className="text-2xl md:text-3xl opacity-80 mb-4 typewriter-subtitle block mx-auto">
-            A refuge for writers
-          </p>
+          {/* Subtitle with typewriter (delayed) - wrapped for stable centering */}
+          <div className="flex justify-center w-full mb-4">
+            <p className="text-2xl md:text-3xl opacity-80 typewriter-subtitle whitespace-nowrap">
+              A refuge for writers
+            </p>
+          </div>
 
           {/* Tagline - fades in after typewriter */}
           <p className="text-lg md:text-xl opacity-60 mb-12 fade-in-delayed">
@@ -33,14 +35,14 @@ const Index = () => {
               onClick={() => setModalOpen(true)}
               className="bg-transparent border-kammi-gold text-kammi-gold hover:bg-kammi-gold hover:text-kammi-dark transition-all duration-300 text-lg px-10 py-6"
             >
-              Get Kammi — €10
+              Get Kammi — 10 €
             </Button>
           </div>
         </div>
       </section>
 
-      {/* About Section - Light Theme */}
-      <section className="py-24 md:py-32 bg-kammi-cream text-kammi-text-dark px-6 transition-theme">
+      {/* About Section - Reversed Theme */}
+      <section className="py-24 md:py-32 bg-kammi-sepia text-kammi-dark px-6 transition-theme">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-medium italic mb-8">
             Writing, without the noise
