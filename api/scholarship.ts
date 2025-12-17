@@ -55,7 +55,7 @@ With warmth,
 The Kammi Team
 
 ---
-P.S. If Kammi becomes valuable to you and your circumstances change, we'd be grateful if you considered supporting us at kammi.app
+P.S. If Kammi becomes valuable to you and your circumstances change, we'd be grateful if you considered supporting us at https://kammi-git-main-olli-laitinens-projects.vercel.app/
 
 Questions or feedback? Reach us at kammi.tuki@gmail.com`,
     });

@@ -80,6 +80,22 @@ const Index = () => {
             >
               Support
             </Link>
+            <a
+              href="https://github.com/Ollilai/Kammi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="opacity-70 hover:opacity-100 transition-opacity duration-300"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/olli-laitinen/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="opacity-70 hover:opacity-100 transition-opacity duration-300"
+            >
+              LinkedIn
+            </a>
           </div>
           <p className="opacity-50 text-base">
             © 2026 Kammi
