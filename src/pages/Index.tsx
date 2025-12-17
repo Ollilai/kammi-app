@@ -55,8 +55,11 @@ const Index = () => {
             Digital writing should feel as intimate as pen and paper.
             Kammi gives you that space — a place where your thoughts can flow without every button and menu pulling your attention away.
           </p>
-          <p className="text-base opacity-60 italic">
+          <p className="text-base opacity-60 italic mb-4">
             One-time purchase. No subscriptions. No cloud. Your words stay on your computer.
+          </p>
+          <p className="text-sm opacity-50">
+            Mac users: If blocked by Gatekeeper, run in Terminal: <code className="bg-kammi-dark/20 px-1 rounded">xattr -cr /Applications/Kammi.app</code>
           </p>
         </div>
       </section>

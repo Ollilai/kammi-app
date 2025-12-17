@@ -39,6 +39,14 @@ Thank you for your interest in Kammi. Here are your download links:
 Mac: ${DOWNLOAD_LINKS.mac}
 Windows: ${DOWNLOAD_LINKS.windows}
 
+IMPORTANT FOR MAC USERS:
+If macOS blocks the app, open Terminal and run:
+xattr -cr /Applications/Kammi.app
+
+Or go to System Settings → Privacy & Security → scroll down and click "Open Anyway"
+
+---
+
 Kammi is a refuge for writers - a quiet, distraction-free place to let your thoughts flow.
 
 We hope it serves you well.
