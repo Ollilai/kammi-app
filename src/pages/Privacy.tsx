@@ -56,23 +56,10 @@ const Privacy = () => {
           </section>
 
           <section>
-            <h2 className="text-2xl font-medium mb-4">Payment Processing</h2>
+            <h2 className="text-2xl font-medium mb-4">Free and Open Source</h2>
             <p>
-              When you purchase Kammi, payment is processed by our payment provider.
-              We receive confirmation of your purchase but do not store your payment
-              details. The payment provider's privacy policy applies to that transaction.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-2xl font-medium mb-4">Scholarship Requests</h2>
-            <p>
-              If you request a scholarship, you provide us with your email address and
-              a brief message. We use this to respond to your request and send you
-              a download link. After about a month, we may send you a single follow-up
-              email to ask how you're enjoying Kammi and whether you'd like to purchase
-              the app. That's it — we do not add you to any mailing list or share your
-              information with third parties.
+              Kammi is free and open source. No purchase or account is required.
+              Just download the app from GitHub and start writing.
             </p>
           </section>
 

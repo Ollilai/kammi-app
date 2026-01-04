@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { PricingModal } from "@/components/PricingModal";
+import { DownloadModal } from "@/components/DownloadModal";
 
 const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -35,7 +35,7 @@ const Index = () => {
               onClick={() => setModalOpen(true)}
               className="bg-transparent border-kammi-gold text-kammi-gold hover:bg-kammi-gold hover:text-kammi-dark transition-all duration-300 text-lg px-10 py-6"
             >
-              Get Kammi — 10 €
+              Download Kammi — Free
             </Button>
           </div>
         </div>
@@ -56,7 +56,7 @@ const Index = () => {
             Kammi gives you that space — a place where your thoughts can flow without every button and menu pulling your attention away.
           </p>
           <p className="text-base opacity-60 italic mb-4">
-            One-time purchase. No subscriptions. No cloud. Your words stay on your computer.
+            Free and open source. No subscriptions. No cloud. Your words stay on your computer.
           </p>
           <p className="text-sm opacity-50">
             Mac users: If blocked by Gatekeeper, run in Terminal: <code className="bg-kammi-dark/20 px-1 rounded">xattr -cr /Applications/Kammi.app</code>
@@ -103,8 +103,8 @@ const Index = () => {
         </div>
       </footer>
 
-      {/* Pricing Modal */}
-      <PricingModal
+      {/* Download Modal */}
+      <DownloadModal
         open={modalOpen}
         onOpenChange={setModalOpen}
       />
