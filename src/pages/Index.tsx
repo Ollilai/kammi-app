@@ -7,72 +7,75 @@ const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
 
   return (
-    <div className="font-serif">
-      {/* Hero Section - Dark Theme */}
-      <section className="min-h-screen flex flex-col items-center justify-center text-kammi-gold px-6" style={{ backgroundColor: '#1a1a1a' }}>
+    <div className="font-garamond">
+      {/* Hero Section - Midnight Theme */}
+      <section className="min-h-screen flex flex-col items-center justify-center text-kammi-gold px-6 theme-midnight">
         <div className="max-w-2xl mx-auto text-center">
           {/* Title with typewriter */}
-          <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium mb-6 typewriter-title inline-block">
+          <h1 className="text-6xl md:text-7xl lg:text-8xl font-medium mb-6 typewriter-title inline-block italic">
             Kammi
           </h1>
 
-          {/* Subtitle with typewriter (delayed) - wrapped for stable centering */}
+          {/* Subtitle with typewriter (delayed) */}
           <div className="flex justify-center w-full mb-4">
-            <p className="text-2xl md:text-3xl opacity-80 typewriter-subtitle whitespace-nowrap">
+            <p className="text-2xl md:text-3xl opacity-80 typewriter-subtitle whitespace-nowrap italic">
               A refuge for writers
             </p>
           </div>
 
-          {/* Tagline - fades in after typewriter */}
-          <p className="text-lg md:text-xl opacity-60 mb-12 fade-in-delayed">
-            Distraction-free. Personal. Beautiful.
-          </p>
 
-          {/* Single CTA Button - fades in after typewriter */}
-          <div className="fade-in-delayed">
+          {/* CTA Button - fades in after typewriter */}
+          <div className="fade-in-delayed mt-12">
             <Button
               variant="outline"
               onClick={() => setModalOpen(true)}
               className="bg-transparent border-kammi-gold text-kammi-gold hover:bg-kammi-gold hover:text-kammi-dark transition-all duration-300 text-lg px-10 py-6"
             >
-              Download Kammi — Free
+              Download Kammi for free
             </Button>
           </div>
         </div>
       </section>
 
-      {/* About Section - Reversed Theme */}
-      <section className="py-24 md:py-32 bg-kammi-sepia text-kammi-dark px-6 transition-theme">
+      {/* Story Section - Daily Pages Theme */}
+      <section className="py-20 md:py-28 px-6 theme-daily-pages">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-medium italic mb-8">
-            Writing, without the noise
+          <h2 className="text-3xl md:text-4xl font-medium italic mb-8">
+            Story of Kammi
           </h2>
-          <p className="text-lg opacity-80 mb-6 leading-relaxed">
-            Kammi is a minimalist writing app. No toolbars. No notifications. No clutter.
-            Just you and your words on a quiet page.
+          <p className="text-lg leading-relaxed mb-6">
+            I made Kammi to create a digital writing app that removes all clutter from the experience of writing.
+            A browser tab of Google Sheets or toolbar menu of Word were taking something away from the experience.
+            I wanted an app that would adapt to my moods of writing.
           </p>
-          <p className="text-lg opacity-80 mb-8 leading-relaxed">
-            Digital writing should feel as intimate as pen and paper.
-            Kammi gives you that space — a place where your thoughts can flow without every button and menu pulling your attention away.
+          <p className="text-lg leading-relaxed mb-8">
+            It's in its very early stages, ready for you to try it out. Please let me know your experiences
+            of using Kammi at{" "}
+            <a
+              href="mailto:kammi.tuki@gmail.com"
+              className="underline hover:opacity-70 transition-opacity"
+            >
+              kammi.tuki@gmail.com
+            </a>.
           </p>
-          <p className="text-base opacity-60 italic mb-4">
-            Free and open source. No subscriptions. No cloud. Your words stay on your computer.
+          <p className="text-lg italic">
+            Thanks, and happy writing!
           </p>
-          <p className="text-sm opacity-50">
-            Mac users: If blocked by Gatekeeper, run in Terminal: <code className="bg-kammi-dark/20 px-1 rounded">xattr -cr /Applications/Kammi.app</code>
+          <p className="text-base mt-4 opacity-80">
+            — Olli, Creator of Kammi
           </p>
         </div>
       </section>
 
-      {/* Footer - Dark Theme */}
-      <footer className="py-12 bg-kammi-dark text-kammi-gold px-6 transition-theme">
+      {/* Footer - Midnight Theme */}
+      <footer className="py-12 px-6 theme-midnight">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="flex justify-center gap-8 mb-6 text-lg">
+          <div className="flex justify-center gap-8 mb-6 text-lg" style={{ color: '#c4b69c' }}>
             <Link
               to="/privacy"
               className="opacity-70 hover:opacity-100 transition-opacity duration-300"
             >
-              Privacy Policy
+              Privacy
             </Link>
             <Link
               to="/support"
@@ -88,16 +91,8 @@ const Index = () => {
             >
               GitHub
             </a>
-            <a
-              href="https://www.linkedin.com/in/olli-laitinen/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="opacity-70 hover:opacity-100 transition-opacity duration-300"
-            >
-              LinkedIn
-            </a>
           </div>
-          <p className="opacity-50 text-base">
+          <p className="opacity-50 text-base" style={{ color: '#c4b69c' }}>
             © 2026 Kammi
           </p>
         </div>

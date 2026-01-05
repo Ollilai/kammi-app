@@ -18,18 +18,18 @@
     --popover: 54 38% 91%;
     --popover-foreground: 0 0% 24%;
 
-    --primary: 37 23% 69%;
+    --primary: 39 25% 69%;
     /* #c4b69c - warm gold */
     --primary-foreground: 0 0% 10%;
 
     --secondary: 0 0% 10%;
     /* #1a1a1a - deep dark */
-    --secondary-foreground: 37 23% 69%;
+    --secondary-foreground: 39 25% 69%;
 
     --muted: 54 20% 85%;
     --muted-foreground: 0 0% 35%;
 
-    --accent: 37 23% 69%;
+    --accent: 39 25% 69%;
     --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84% 60%;
@@ -37,16 +37,16 @@
 
     --border: 37 15% 75%;
     --input: 37 15% 75%;
-    --ring: 37 23% 69%;
+    --ring: 39 25% 69%;
 
     --radius: 0.5rem;
 
     /* Kammi specific */
     --kammi-dark: 0 0% 10%;
     /* #1a1a1a */
-    --kammi-sepia: 37 23% 69%;
+    --kammi-sepia: 39 25% 69%;
     /* #c4b69c */
-    --kammi-gold: 37 23% 69%;
+    --kammi-gold: 39 25% 69%;
     /* #c4b69c */
     --kammi-text-dark: 0 0% 10%;
     /* #1a1a1a */
@@ -64,33 +64,33 @@
   .dark {
     --background: 0 0% 10%;
     /* #1a1a1a */
-    --foreground: 37 23% 69%;
+    --foreground: 39 25% 69%;
     /* #c4b69c */
 
     --card: 0 0% 10%;
-    --card-foreground: 37 23% 69%;
+    --card-foreground: 39 25% 69%;
 
     --popover: 0 0% 10%;
-    --popover-foreground: 37 23% 69%;
+    --popover-foreground: 39 25% 69%;
 
-    --primary: 37 23% 69%;
+    --primary: 39 25% 69%;
     --primary-foreground: 0 0% 10%;
 
     --secondary: 0 0% 15%;
-    --secondary-foreground: 37 23% 69%;
+    --secondary-foreground: 39 25% 69%;
 
     --muted: 0 0% 18%;
-    --muted-foreground: 37 15% 55%;
+    --muted-foreground: 39 15% 55%;
 
     --accent: 0 0% 15%;
-    --accent-foreground: 37 23% 69%;
+    --accent-foreground: 39 25% 69%;
 
     --destructive: 0 62% 30%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 20%;
     --input: 0 0% 20%;
-    --ring: 37 23% 69%;
+    --ring: 39 25% 69%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -211,4 +211,59 @@
   opacity: 0;
   animation: fade-in-up 0.8s ease forwards;
   animation-delay: 4.3s;
+}
+
+/* ================================
+   TIME-BASED THEME CLASSES
+   ================================ */
+
+/* Font Stacks */
+.font-baskerville {
+  font-family: 'Baskerville', 'Baskerville Old Face', 'Libre Baskerville', serif;
+}
+
+.font-palatino {
+  font-family: 'Palatino', 'Palatino Linotype', 'Book Antiqua', serif;
+}
+
+.font-georgia {
+  font-family: 'Georgia', serif;
+}
+
+.font-garamond {
+  font-family: 'Garamond', 'EB Garamond', 'Cormorant Garamond', serif;
+}
+
+.font-courier {
+  font-family: 'Courier New', 'Courier', monospace;
+}
+
+/* First Light - 4-6 AM */
+.theme-first-light {
+  background-color: #fdfbf5;
+  color: #6b5344;
+}
+
+/* Daily Pages - 6-9 AM */
+.theme-daily-pages {
+  background-color: #fff8e7;
+  color: #5c4a3a;
+}
+
+/* Golden Hour - 5-7 PM */
+.theme-golden-hour {
+  background-color: #2c2418;
+  color: #d4a55a;
+}
+
+/* Midnight - 10 PM-1 AM (default) */
+.theme-midnight {
+  background-color: #1a1a1a;
+  color: #c4b69c;
+}
+
+/* 3 AM - 2-4 AM */
+.theme-3am {
+  background-color: #0f0f12;
+  color: #8fa4b8;
 }
