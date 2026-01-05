@@ -10,8 +10,8 @@ import { Apple, Monitor } from "lucide-react";
 
 // Download URLs
 const DOWNLOAD_LINKS = {
-    mac: "https://github.com/Ollilai/Kammi/releases/download/v1.0.3/Kammi-1.0.3-arm64.dmg",
-    windows: "https://github.com/Ollilai/Kammi/releases/download/v1.0.3/Kammi.Setup.1.0.3.exe",
+    mac: "https://github.com/Ollilai/Kammi/releases/download/v1.1.1/Kammi-1.1.1-arm64.dmg",
+    windows: "https://github.com/Ollilai/Kammi/releases/download/v1.1.1/Kammi.Setup.1.1.1.exe",
 };
 
 interface DownloadModalProps {

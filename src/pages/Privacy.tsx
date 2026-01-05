@@ -3,7 +3,7 @@ import { ArrowLeft } from "lucide-react";
 
 const Privacy = () => {
   return (
-    <div className="min-h-screen bg-kammi-dark text-kammi-gold font-serif transition-theme">
+    <div className="min-h-screen theme-midnight font-garamond transition-theme">
       <div className="max-w-2xl mx-auto px-6 py-16">
         <Link
           to="/"
