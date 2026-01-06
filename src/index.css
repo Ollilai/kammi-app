@@ -183,6 +183,7 @@
 .typewriter-subtitle {
   white-space: nowrap;
   border-right: 2px solid transparent;
+  padding-right: 0.15em; /* Extra space for italic text overhang */
   clip-path: inset(0 100% 0 0);
   animation:
     reveal-text 2s steps(30, end) forwards 1.8s,
