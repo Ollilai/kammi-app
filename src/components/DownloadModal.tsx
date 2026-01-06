@@ -8,10 +8,11 @@ import {
 import { Button } from "@/components/ui/button";
 import { Apple, Monitor } from "lucide-react";
 
-// Download URLs
+// Download URLs - uses /latest/download/ so links never need updating
+// Requires artifact names in electron-builder to be version-agnostic
 const DOWNLOAD_LINKS = {
-    mac: "https://github.com/Ollilai/Kammi/releases/download/v1.1.1/Kammi-1.1.1-arm64.dmg",
-    windows: "https://github.com/Ollilai/Kammi/releases/download/v1.1.1/Kammi.Setup.1.1.1.exe",
+    mac: "https://github.com/Ollilai/Kammi/releases/latest/download/Kammi-arm64.dmg",
+    windows: "https://github.com/Ollilai/Kammi/releases/latest/download/Kammi-Setup.exe",
 };
 
 interface DownloadModalProps {
