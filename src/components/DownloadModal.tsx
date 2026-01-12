@@ -61,7 +61,7 @@ export function DownloadModal({ open, onOpenChange }: DownloadModalProps) {
 
                 {/* Mac note */}
                 <p className="text-xs text-kammi-gold/40 text-center">
-                    Mac users: If blocked by Gatekeeper, run in Terminal: <code className="bg-kammi-gold/10 px-1 rounded">xattr -cr /Applications/Kammi.app</code>
+                    Mac users: If blocked by Gatekeeper, run in Terminal: <code className="bg-kammi-gold/20 border border-kammi-gold/30 px-1.5 py-0.5 rounded text-kammi-gold/60">xattr -cr /Applications/Kammi.app</code>
                 </p>
             </DialogContent>
         </Dialog>

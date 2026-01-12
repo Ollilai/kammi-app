@@ -9,7 +9,7 @@ const Privacy = () => {
           to="/"
           className="inline-flex items-center opacity-70 hover:opacity-100 transition-opacity duration-300 mb-12"
         >
-          <ArrowLeft className="mr-2 h-5 w-5" />
+          <ArrowLeft className="mr-2 h-5 w-5" aria-hidden="true" />
           Back to home
         </Link>
 

@@ -70,7 +70,7 @@ const Index = () => {
       {/* Footer - Midnight Theme */}
       <footer className="py-12 px-6 theme-midnight">
         <div className="max-w-2xl mx-auto text-center">
-          <div className="flex justify-center gap-8 mb-6 text-lg" style={{ color: '#c4b69c' }}>
+          <nav aria-label="Footer navigation" className="flex justify-center gap-8 mb-6 text-lg" style={{ color: '#c4b69c' }}>
             <Link
               to="/privacy"
               className="opacity-70 hover:opacity-100 transition-opacity duration-300"
@@ -91,7 +91,7 @@ const Index = () => {
             >
               GitHub
             </a>
-          </div>
+          </nav>
           <p className="opacity-50 text-base" style={{ color: '#c4b69c' }}>
             © 2026 Kammi
           </p>

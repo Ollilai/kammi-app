@@ -29,10 +29,13 @@ export const TypewriterText = ({
     }, [currentIndex, text, speed]);
 
     return (
-        <span className={className}>
+        <span className={className} aria-live="polite" aria-atomic="true">
             {displayedText}
             {!isComplete && (
-                <span className="inline-block w-[3px] h-[1em] bg-current ml-1 animate-pulse" />
+                <span 
+                    className="inline-block w-[3px] h-[1em] bg-current ml-1 animate-pulse motion-reduce:animate-none" 
+                    aria-hidden="true"
+                />
             )}
         </span>
     );

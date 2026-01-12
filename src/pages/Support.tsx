@@ -9,7 +9,7 @@ const Support = () => {
           to="/"
           className="inline-flex items-center opacity-70 hover:opacity-100 transition-opacity duration-300 mb-12"
         >
-          <ArrowLeft className="mr-2 h-5 w-5" />
+          <ArrowLeft className="mr-2 h-5 w-5" aria-hidden="true" />
           Back to home
         </Link>
 
@@ -31,7 +31,7 @@ const Support = () => {
               href="mailto:kammi.tuki@gmail.com"
               className="inline-flex items-center text-xl hover:opacity-70 transition-opacity duration-300"
             >
-              <Mail className="mr-3 h-5 w-5" />
+              <Mail className="mr-3 h-5 w-5" aria-hidden="true" />
               kammi.tuki@gmail.com
             </a>
           </div>

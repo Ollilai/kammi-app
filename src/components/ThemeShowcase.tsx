@@ -56,7 +56,7 @@ export const ThemeShowcase = () => {
             {themes.map((theme) => (
                 <div
                     key={theme.name}
-                    className={`rounded-lg p-6 text-center transition-all duration-300 hover:scale-105 ${theme.fontClass}`}
+                    className={`rounded-lg p-6 text-center ${theme.fontClass}`}
                     style={{
                         backgroundColor: theme.bgColor,
                         color: theme.textColor,
