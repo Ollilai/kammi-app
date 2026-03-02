@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { DownloadModal } from "@/components/DownloadModal";
+import { alternativesData } from "@/data/alternatives";
+import { useCasesData } from "@/data/use-cases";
 
 const Index = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -68,30 +70,47 @@ const Index = () => {
       </section>
 
       {/* Footer - Midnight Theme */}
-      <footer className="py-12 px-6 theme-midnight">
-        <div className="max-w-2xl mx-auto text-center">
-          <nav aria-label="Footer navigation" className="flex justify-center gap-8 mb-6 text-lg" style={{ color: '#c4b69c' }}>
-            <Link
-              to="/privacy"
-              className="opacity-70 hover:opacity-100 transition-opacity duration-300"
-            >
-              Privacy
-            </Link>
-            <Link
-              to="/support"
-              className="opacity-70 hover:opacity-100 transition-opacity duration-300"
-            >
-              Support
-            </Link>
-            <a
-              href="https://github.com/Ollilai/Kammi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="opacity-70 hover:opacity-100 transition-opacity duration-300"
-            >
-              GitHub
-            </a>
-          </nav>
+      <footer className="py-16 px-6 theme-midnight border-t border-kammi-gold/20">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          <div>
+            <h3 className="text-xl font-bold mb-6 font-sans uppercase tracking-wider text-kammi-gold">Kammi</h3>
+            <nav aria-label="Footer navigation" className="flex flex-col gap-3 text-lg" style={{ color: '#c4b69c' }}>
+              <Link to="/privacy" className="opacity-70 hover:opacity-100 transition-opacity duration-300">
+                Privacy Policy
+              </Link>
+              <Link to="/support" className="opacity-70 hover:opacity-100 transition-opacity duration-300">
+                Support
+              </Link>
+              <a href="https://github.com/Ollilai/Kammi" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-opacity duration-300">
+                GitHub
+              </a>
+            </nav>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-bold mb-6 font-sans uppercase tracking-wider text-kammi-gold">Compare</h3>
+            <nav aria-label="Alternatives navigation" className="flex flex-col gap-3 text-lg" style={{ color: '#c4b69c' }}>
+              {alternativesData.map(alt => (
+                <Link key={alt.slug} to={`/alternatives/${alt.slug}-alternative`} className="opacity-70 hover:opacity-100 transition-opacity duration-300">
+                  Kammi vs {alt.competitorName}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-bold mb-6 font-sans uppercase tracking-wider text-kammi-gold">Use Cases</h3>
+            <nav aria-label="Use cases navigation" className="flex flex-col gap-3 text-lg" style={{ color: '#c4b69c' }}>
+              {useCasesData.map(uc => (
+                <Link key={uc.slug} to={`/for/${uc.slug}`} className="opacity-70 hover:opacity-100 transition-opacity duration-300">
+                  Kammi for {uc.title}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        </div>
+
+        <div className="max-w-6xl mx-auto text-center pt-8 border-t border-kammi-gold/10">
           <p className="opacity-50 text-base" style={{ color: '#c4b69c' }}>
             © 2026 Kammi
           </p>

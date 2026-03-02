@@ -11,7 +11,7 @@ import { Apple, Monitor } from "lucide-react";
 // Download URLs - uses /latest/download/ so links never need updating
 // Requires artifact names in electron-builder to be version-agnostic
 const DOWNLOAD_LINKS = {
-    mac: "https://github.com/Ollilai/Kammi/releases/latest/download/Kammi-arm64.dmg",
+    mac: "https://github.com/Ollilai/Kammi/releases/latest/download/Kammi.dmg",
     windows: "https://github.com/Ollilai/Kammi/releases/latest/download/Kammi-Setup.exe",
 };
 

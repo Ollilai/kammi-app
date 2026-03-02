@@ -1,0 +1,26 @@
+# Kammi
+> A refuge for writers
+
+Kammi is a minimalist desktop writing application made to strip away all distractions, toolbars, and cloud-syncing anxiety from your writing process.
+
+## Key Features
+- **Distraction-Free**: Fullscreen by default with absolutely no UI noise.
+- **Personal Check-in**: Greets you by name depending on what time you write.
+- **Time-Based Themes**: Five curated themes matching the mood of different times of day (e.g. "First Light", "Midnight", "3 AM", "Golden Hour").
+- **Auto-Save**: Continuously saves all your words straight to your locale storage in `~/Documents/Kammi`. You own your words.
+- **Typographic Integrity**: Beautiful, classic font defaults like Garamond, Baskerville, and Courier New built to suit your aesthetic.
+- **Session Picker**: Pick up any previous writing session easily.
+
+## Platform Support
+- **Mac OS**: [Download the latest .dmg from GitHub](https://github.com/Ollilai/Kammi/releases/latest)
+- **Windows OS**: [Download the latest .exe from GitHub](https://github.com/Ollilai/Kammi/releases/latest)
+
+## Company Information
+Kammi was created by Olli Laitinen to build a better space for novelists, journalers, and creatives.
+
+## Useful Links
+- **Website**: https://kammi.vercel.app
+- **Privacy Policy**: https://kammi.vercel.app/privacy
+- **Support**: https://kammi.vercel.app/support
+- **Support Email**: kammi.tuki@gmail.com
+- **Source Code**: https://github.com/Ollilai/Kammi
